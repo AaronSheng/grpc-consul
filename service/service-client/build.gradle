@@ -1,0 +1,11 @@
+dependencies {
+    compile project(":common:common-service")
+    compile project(":common:common-web")
+    compile project(":common:common-client")
+    compile project(":common:common-redis")
+    compile project(":model:model-client")
+    compile project(":api:api-client")
+    compile project(":api:api-server")
+    compile "org.springframework.cloud:spring-cloud-starter-config"
+    compile "org.springframework.cloud:spring-cloud-stream-binder-rabbit"
+}
