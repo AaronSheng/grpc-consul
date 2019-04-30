@@ -80,23 +80,6 @@ subprojects {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
-    protobuf {
-        protoc {
-            artifact = "com.google.protobuf:protoc:$protobufVersion"
-        }
-        plugins {
-            grpc {
-                artifact = "io.grpc:protoc-gen-grpc-java:$grpcVersion"
-            }
-        }
-        generateProtoTasks {
-            all()*.plugins {
-                grpc {}
-            }
-        }
-        generatedFilesBaseDir = "$projectDir/build/generated"
-    }
-
     configurations {
         all*.exclude group: "ch.qos.logback", module: "logback-classic"
         all*.exclude group: "org.springframework.boot", module: "spring-boot-starter-logging"

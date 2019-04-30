@@ -11,6 +11,31 @@ subprojects {
         compile "io.grpc:grpc-protobuf"
         compile "io.grpc:grpc-stub"
     }
+
+    protobuf {
+        protoc {
+            artifact = "com.google.protobuf:protoc:3.7.1"
+        }
+        plugins {
+            grpc {
+                artifact = "io.grpc:protoc-gen-grpc-java:1.2.0"
+            }
+        }
+        generateProtoTasks {
+            all()*.plugins {
+                grpc {}
+            }
+        }
+        generatedFilesBaseDir = "$projectDir/build/generated"
+    }
+
+    sourceSets {
+        main {
+            proto {
+                srcDir "../../proto/"
+            }
+        }
+    }
 }
 
 
