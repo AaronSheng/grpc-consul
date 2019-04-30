@@ -13,7 +13,7 @@ include ":common:common-db"
 include ":common:common-client"
 include 'common:common-util'
 include 'common:common-redis'
+include 'common:common-grpc'
 include ":model"
 include 'model:model-server'
 include 'model:model-client'
-

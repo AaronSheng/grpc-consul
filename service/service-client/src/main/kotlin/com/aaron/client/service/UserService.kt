@@ -1,6 +1,7 @@
 package com.aaron.client.service
 
 import com.aaron.client.api.pojo.User
+import com.aaron.client.grpc.UserServiceGrpcClient
 import com.aaron.common.client.Client
 import com.aaron.common.redis.RedisLock
 import com.aaron.server.api.UserResource
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Service
  */
 @Service
 class UserService @Autowired constructor(
-    private val client: Client,
+    private val userServiceGrpcClient: UserServiceGrpcClient,
     private val redisTemplate: RedisTemplate<String, String>
 ) {
     fun getUser(id: Long): User {
@@ -23,7 +24,7 @@ class UserService @Autowired constructor(
                 if (!redisLock.tryLock()) {
                     return@use
                 }
-                val user = client.get(UserResource::class).get(id).data!!
+                val user = userServiceGrpcClient.getUser(id)
                 return User(id, user.name)
             }
         }

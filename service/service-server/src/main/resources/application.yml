@@ -13,15 +13,12 @@ spring:
     port: 5672
     username: admin
     password: password
-  # zipkin发送方式
-  zipkin:
-    sender:
-      type: rabbit
-  # sleuth采用配置
-  sleuth:
-    sampler:
-      probability: 1.0
 
-server:
-  port: 8083
+grpc:
+  server:
+    port: 9001
+  consul:
+    discovery:
+      tags: grpc,dev
+
 

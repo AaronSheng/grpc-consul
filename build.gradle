@@ -143,7 +143,7 @@ subprojects {
 
             dependencySet(group: "org.springframework.cloud", version: "$springCloudVersion") {
                 entry "spring-cloud-starter-consul-discovery"
-                entry "spring-cloud-starter-consul-core"
+                entry "spring-cloud-starter-consul"
                 entry "spring-cloud-starter-sleuth"
                 entry "spring-cloud-starter-zipkin"
                 entry "spring-cloud-starter-openfeign"

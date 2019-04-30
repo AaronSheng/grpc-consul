@@ -17,7 +17,6 @@ import org.springframework.core.Ordered
 @PropertySource("classpath:/common-service.properties")
 @AutoConfigureOrder(Ordered.HIGHEST_PRECEDENCE)
 @AutoConfigureBefore(ConsulAutoConfiguration::class)
-@EnableDiscoveryClient
 class ServiceAutoConfiguration {
     @Bean
     fun springContextUtil() = SpringContextUtil()

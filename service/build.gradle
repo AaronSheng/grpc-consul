@@ -2,9 +2,15 @@ subprojects {
     apply plugin: 'kotlin'
     apply plugin: "kotlin-spring"
     apply plugin: "org.springframework.boot"
+    apply plugin: "com.google.protobuf"
 
     dependencies {
         compile "org.jetbrains.kotlin:kotlin-stdlib"
         compile "org.jetbrains.kotlin:kotlin-reflect"
+        compile "io.grpc:grpc-netty-shaded"
+        compile "io.grpc:grpc-protobuf"
+        compile "io.grpc:grpc-stub"
     }
 }
+
+

@@ -1,9 +1,14 @@
 dependencies {
+    compile project(":common:common-grpc")
     compile project(":common:common-service")
     compile project(":common:common-web")
     compile project(":common:common-db")
-    compile project(":api:api-server")
+    compile project(":common:common-redis")
     compile project(":model:model-server")
     compile "org.springframework.cloud:spring-cloud-starter-config"
     compile "org.springframework.cloud:spring-cloud-stream-binder-rabbit"
+}
+
+configurations {
+    all*.exclude group: "org.springframework.boot", module: "spring-boot-starter-tomcat"
 }

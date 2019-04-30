@@ -27,3 +27,8 @@ spring:
 
 server:
   port: 8081
+
+grpc:
+  consul:
+    discovery:
+      tags: grpc

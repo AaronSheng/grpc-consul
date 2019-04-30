@@ -1,0 +1,22 @@
+syntax = "proto3";
+package grpc;
+option java_package = "com.aaron.server.service";
+option java_outer_classname = "UserServiceProto";
+option java_multiple_files = true;
+
+// 服务端接口类
+service UserService {
+    // 服务
+    rpc GetUser (UserRequest) returns (UserResponse) {}
+}
+
+// 请求参数
+message UserRequest {
+    int64 userId = 1;
+}
+
+//响应参数
+message UserResponse {
+    int64 userId = 1;
+    string name = 2;
+}

@@ -1,0 +1,9 @@
+dependencies {
+    compile project(":common:common-api")
+    compile "org.springframework.boot:spring-boot-starter-web"
+    compile "org.springframework.cloud:spring-cloud-starter-consul-discovery"
+    compile "org.springframework.cloud:spring-cloud-starter-consul"
+    compile "io.grpc:grpc-netty-shaded"
+    compile "io.grpc:grpc-protobuf"
+    compile "io.grpc:grpc-stub"
+}
