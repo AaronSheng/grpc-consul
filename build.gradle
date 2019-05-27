@@ -30,7 +30,6 @@ buildscript {
     }
 
     repositories {
-        maven {url "http://mirrors.devops.oa.com/maven/"}
         mavenLocal()
         mavenCentral()
         jcenter()
@@ -54,7 +53,6 @@ allprojects {
     version '1.0.0'
 
     repositories {
-        maven {url "http://mirrors.devops.oa.com/maven/"}
         mavenLocal()
         mavenCentral()
         jcenter()
